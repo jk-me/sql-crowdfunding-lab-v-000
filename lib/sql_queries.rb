@@ -42,5 +42,6 @@ end
 def selects_the_category_name_and_the_sum_total_of_the_all_its_pledges_for_the_books_category
 "select projects.category, sum(pledges.amount)
 from projects join pledges on projects.id = pledges.project_id
+group by projects.category
 having projects.category = 'books'"
 end
